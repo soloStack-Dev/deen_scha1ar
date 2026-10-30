@@ -1,0 +1,17 @@
+/* Design tokens from Context/01-image-analysis-and-design-system.md */
+:root {
+  --lime: #c6f36b;
+  --lime-deep: #a8e04a;
+  --mint-bg: #eef9dd;
+  --ink: #111411;
+  --white: #ffffff;
+  --grey-text: #6b7280;
+  --grey-line: #e3e8dc;
+  --done: #22c55e;
+  --missed: #ef4444;
+  --pending: #e5e7eb;
+
+  --radius-card: 28px;
+  --radius-pill: 999px;
+  --space: 8px;
+}

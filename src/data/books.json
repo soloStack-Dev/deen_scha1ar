@@ -1,0 +1,454 @@
+[
+  {
+    "id": "meditations",
+    "title": "Meditations",
+    "author": "Marcus Aurelius",
+    "category": "self-control",
+    "description": "Private notes on duty, self-command and staying calm under pressure.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=meditations+marcus+aurelius",
+    "license": "public-domain"
+  },
+  {
+    "id": "letters-from-a-stoic",
+    "title": "Letters from a Stoic",
+    "author": "Seneca",
+    "category": "self-control",
+    "description": "Short letters on time, friendship, fear and living deliberately.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=seneca+letters",
+    "license": "public-domain"
+  },
+  {
+    "id": "enchiridion",
+    "title": "Enchiridion",
+    "author": "Epictetus",
+    "category": "self-control",
+    "description": "A compact handbook for separating what you control from what you do not.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=epictetus+enchiridion",
+    "license": "public-domain"
+  },
+  {
+    "id": "walden",
+    "title": "Walden",
+    "author": "Henry David Thoreau",
+    "category": "self-control",
+    "description": "An experiment in simplicity, attention and deliberate living.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=walden+thoreau",
+    "license": "public-domain"
+  },
+  {
+    "id": "the-prophet",
+    "title": "The Prophet",
+    "author": "Kahlil Gibran",
+    "category": "self-control",
+    "description": "Poetic reflections on work, love, freedom and everyday choices.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=the+prophet+gibran",
+    "license": "public-domain"
+  },
+  {
+    "id": "science-of-getting-rich",
+    "title": "The Science of Getting Rich",
+    "author": "Wallace D. Wattles",
+    "category": "finance",
+    "description": "A classic short book on purposeful work and practical abundance.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=the+science+of+getting+rich",
+    "license": "public-domain"
+  },
+  {
+    "id": "principles-of-finance",
+    "title": "Principles of Finance",
+    "author": "OpenStax",
+    "category": "finance",
+    "description": "An open textbook covering financial statements, risk, value and planning.",
+    "sourceName": "OpenStax",
+    "sourceUrl": "https://openstax.org/details/books/principles-finance",
+    "license": "CC-BY"
+  },
+  {
+    "id": "money-and-the-mechanism-of-exchange",
+    "title": "Money and the Mechanism of Exchange",
+    "author": "W. Stanley Jevons",
+    "category": "finance",
+    "description": "A classic explanation of money, banking and exchange.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=money+and+the+mechanism+of+exchange",
+    "license": "public-domain"
+  },
+  {
+    "id": "wealth-of-nations",
+    "title": "The Wealth of Nations",
+    "author": "Adam Smith",
+    "category": "economics",
+    "description": "The foundational study of markets, labour and national prosperity.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=wealth+of+nations+adam+smith",
+    "license": "public-domain"
+  },
+  {
+    "id": "principles-of-economics",
+    "title": "Principles of Economics 3e",
+    "author": "OpenStax",
+    "category": "economics",
+    "description": "An open introductory economics textbook with real-world examples.",
+    "sourceName": "OpenStax",
+    "sourceUrl": "https://openstax.org/details/books/principles-economics-3e",
+    "license": "CC-BY"
+  },
+  {
+    "id": "communist-manifesto",
+    "title": "The Communist Manifesto",
+    "author": "Karl Marx and Friedrich Engels",
+    "category": "economics",
+    "description": "A short historical text for studying economic and political theory.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=communist+manifesto",
+    "license": "public-domain"
+  },
+  {
+    "id": "progress-and-poverty",
+    "title": "Progress and Poverty",
+    "author": "Henry George",
+    "category": "economics",
+    "description": "A classic argument about land, inequality and economic progress.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=progress+and+poverty",
+    "license": "public-domain"
+  },
+  {
+    "id": "the-symposium",
+    "title": "The Symposium",
+    "author": "Plato",
+    "category": "relationship",
+    "description": "A philosophical dialogue on love, desire and human connection.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=plato+symposium",
+    "license": "public-domain"
+  },
+  {
+    "id": "on-love",
+    "title": "On Love",
+    "author": "Stendhal",
+    "category": "relationship",
+    "description": "A literary study of attraction, imagination and romantic feeling.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=stendhal+on+love",
+    "license": "public-domain"
+  },
+  {
+    "id": "the-art-of-worldly-wisdom",
+    "title": "The Art of Worldly Wisdom",
+    "author": "Baltasar Gracian",
+    "category": "relationship",
+    "description": "Short maxims on judgement, character and dealing with people.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=the+art+of+worldly+wisdom",
+    "license": "public-domain"
+  },
+  {
+    "id": "the-prophet-on-love",
+    "title": "The Prophet",
+    "author": "Kahlil Gibran",
+    "category": "relationship",
+    "description": "Reflections on love, marriage and companionship.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=the+prophet+gibran",
+    "license": "public-domain"
+  },
+  {
+    "id": "kama-sutra",
+    "title": "The Kama Sutra of Vatsyayana",
+    "author": "Vatsyayana",
+    "category": "sex-education",
+    "description": "A historical public-domain text on intimacy and relationships.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=kama+sutra",
+    "license": "public-domain",
+    "adultOnly": true
+  },
+  {
+    "id": "sexual-life-of-our-time",
+    "title": "The Sexual Life of Our Time",
+    "author": "Iwan Bloch",
+    "category": "sex-education",
+    "description": "A historical public-domain medical survey of sexual health.",
+    "sourceName": "OpenLibrary",
+    "sourceUrl": "https://openlibrary.org/search?q=the+sexual+life+of+our+time",
+    "license": "public-domain",
+    "adultOnly": true
+  },
+  {
+    "id": "mysterious-affair-at-styles",
+    "title": "The Mysterious Affair at Styles",
+    "author": "Agatha Christie",
+    "category": "mysterious",
+    "description": "A country-house mystery with a careful detective and a closed circle of suspects.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=the+mysterious+affair+at+styles",
+    "license": "public-domain"
+  },
+  {
+    "id": "hound-of-the-baskervilles",
+    "title": "The Hound of the Baskervilles",
+    "author": "Arthur Conan Doyle",
+    "category": "mysterious",
+    "description": "Sherlock Holmes investigates a family legend on the moors.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=hound+of+the+baskervilles",
+    "license": "public-domain"
+  },
+  {
+    "id": "frankenstein",
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "category": "mysterious",
+    "description": "A gothic novel about creation, responsibility and loneliness.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=frankenstein+shelley",
+    "license": "public-domain"
+  },
+  {
+    "id": "dracula",
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "category": "mysterious",
+    "description": "A classic epistolary horror novel of suspense and obsession.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=dracula+bram+stoker",
+    "license": "public-domain"
+  },
+  {
+    "id": "the-yellow-wallpaper",
+    "title": "The Yellow Wallpaper",
+    "author": "Charlotte Perkins Gilman",
+    "category": "mysterious",
+    "description": "A short, unsettling story about confinement and perception.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=the+yellow+wallpaper",
+    "license": "public-domain"
+  },
+  {
+    "id": "origin-of-species",
+    "title": "On the Origin of Species",
+    "author": "Charles Darwin",
+    "category": "science",
+    "description": "The classic argument for evolution by natural selection.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=origin+of+species+darwin",
+    "license": "public-domain"
+  },
+  {
+    "id": "relativity",
+    "title": "Relativity: The Special and General Theory",
+    "author": "Albert Einstein",
+    "category": "science",
+    "description": "Einstein's own accessible introduction to relativity.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=relativity+einstein",
+    "license": "public-domain"
+  },
+  {
+    "id": "biology-2e",
+    "title": "Biology 2e",
+    "author": "OpenStax",
+    "category": "science",
+    "description": "An open textbook covering cells, genetics, evolution and ecology.",
+    "sourceName": "OpenStax",
+    "sourceUrl": "https://openstax.org/details/books/biology-2e",
+    "license": "CC-BY"
+  },
+  {
+    "id": "astronomy-2e",
+    "title": "Astronomy 2e",
+    "author": "OpenStax",
+    "category": "science",
+    "description": "An open introduction to the solar system, stars and cosmology.",
+    "sourceName": "OpenStax",
+    "sourceUrl": "https://openstax.org/details/books/astronomy-2e",
+    "license": "CC-BY"
+  },
+  {
+    "id": "chemistry-2e",
+    "title": "Chemistry 2e",
+    "author": "OpenStax",
+    "category": "science",
+    "description": "An open general-chemistry textbook with worked examples.",
+    "sourceName": "OpenStax",
+    "sourceUrl": "https://openstax.org/details/books/chemistry-2e",
+    "license": "CC-BY"
+  },
+  {
+    "id": "college-physics",
+    "title": "College Physics",
+    "author": "OpenStax",
+    "category": "science",
+    "description": "An open algebra-based physics textbook.",
+    "sourceName": "OpenStax",
+    "sourceUrl": "https://openstax.org/details/books/college-physics",
+    "license": "CC-BY"
+  },
+  {
+    "id": "anatomy-and-physiology",
+    "title": "Anatomy and Physiology 2e",
+    "author": "OpenStax",
+    "category": "human-body",
+    "description": "An open textbook on the structure and function of the human body.",
+    "sourceName": "OpenStax",
+    "sourceUrl": "https://openstax.org/details/books/anatomy-and-physiology-2e",
+    "license": "CC-BY"
+  },
+  {
+    "id": "grays-anatomy",
+    "title": "Gray's Anatomy",
+    "author": "Henry Gray",
+    "category": "human-body",
+    "description": "The historical public-domain reference on human anatomy.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=grays+anatomy",
+    "license": "public-domain"
+  },
+  {
+    "id": "psychology-2e",
+    "title": "Psychology 2e",
+    "author": "OpenStax",
+    "category": "human-body",
+    "description": "An open introduction to behaviour, development and mental health.",
+    "sourceName": "OpenStax",
+    "sourceUrl": "https://openstax.org/details/books/psychology-2e",
+    "license": "CC-BY"
+  },
+  {
+    "id": "microbiology",
+    "title": "Microbiology",
+    "author": "OpenStax",
+    "category": "diseases",
+    "description": "An open textbook on microbes, infection and immunity.",
+    "sourceName": "OpenStax",
+    "sourceUrl": "https://openstax.org/details/books/microbiology",
+    "license": "CC-BY"
+  },
+  {
+    "id": "mode-of-communication-of-cholera",
+    "title": "On the Mode of Communication of Cholera",
+    "author": "John Snow",
+    "category": "diseases",
+    "description": "A landmark public-health investigation into how cholera spreads.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=on+the+mode+of+communication+of+cholera",
+    "license": "public-domain"
+  },
+  {
+    "id": "the-story-of-the-plague",
+    "title": "A Journal of the Plague Year",
+    "author": "Daniel Defoe",
+    "category": "diseases",
+    "description": "A historical account of epidemic life in London.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=a+journal+of+the+plague+year",
+    "license": "public-domain"
+  },
+  {
+    "id": "king-james-bible",
+    "title": "The King James Bible",
+    "author": "Various",
+    "category": "bible",
+    "description": "The public-domain King James translation of the Bible.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=king+james+bible",
+    "license": "public-domain"
+  },
+  {
+    "id": "world-english-bible",
+    "title": "World English Bible",
+    "author": "eBible.org",
+    "category": "bible",
+    "description": "A modern public-domain English Bible translation.",
+    "sourceName": "eBible",
+    "sourceUrl": "https://ebible.org/eng-web/",
+    "license": "public-domain"
+  },
+  {
+    "id": "the-apocrypha",
+    "title": "The Apocrypha",
+    "author": "Various",
+    "category": "bible",
+    "description": "Public-domain texts from the biblical Apocrypha.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=the+apocrypha",
+    "license": "public-domain"
+  },
+  {
+    "id": "bible-commentary",
+    "title": "A Commentary on the Bible",
+    "author": "Various",
+    "category": "bible",
+    "description": "Historical public-domain commentary for study alongside the text.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=bible+commentary",
+    "license": "public-domain"
+  },
+  {
+    "id": "the-prince",
+    "title": "The Prince",
+    "author": "Niccolo Machiavelli",
+    "category": "others",
+    "description": "A classic short work on power, strategy and political judgement.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=the+prince+machiavelli",
+    "license": "public-domain"
+  },
+  {
+    "id": "the-republic",
+    "title": "The Republic",
+    "author": "Plato",
+    "category": "others",
+    "description": "A foundational dialogue on justice, education and community.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=the+republic+plato",
+    "license": "public-domain"
+  },
+  {
+    "id": "tao-te-ching",
+    "title": "Tao Te Ching",
+    "author": "Lao Tzu",
+    "category": "others",
+    "description": "Short verses on balance, simplicity and quiet action.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=tao+te+ching",
+    "license": "public-domain"
+  },
+  {
+    "id": "the-art-of-war",
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "category": "others",
+    "description": "A compact classic on preparation, strategy and avoiding waste.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=the+art+of+war+sun+tzu",
+    "license": "public-domain"
+  },
+  {
+    "id": "the-analects",
+    "title": "The Analects",
+    "author": "Confucius",
+    "category": "others",
+    "description": "Collected sayings on character, learning and daily conduct.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=the+analects+confucius",
+    "license": "public-domain"
+  },
+  {
+    "id": "souls-of-black-folk",
+    "title": "The Souls of Black Folk",
+    "author": "W. E. B. Du Bois",
+    "category": "others",
+    "description": "Essays on history, education, identity and social change.",
+    "sourceName": "Gutenberg",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/search/?query=the+souls+of+black+folk",
+    "license": "public-domain"
+  }
+]

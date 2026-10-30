@@ -1,0 +1,69 @@
+.spark-row {
+  width: 100%;
+}
+
+.spark-row__inner {
+  display: flex;
+  flex-direction: row;
+  padding-right: 16px;
+}
+
+.spark-card {
+  width: 268px;
+  border-radius: 24px;
+  padding: 16px;
+  margin-right: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.spark-card--ayah {
+  background-color: var(--lime);
+}
+
+.spark-card--thought {
+  background-color: var(--white);
+}
+
+.spark-card__eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: #3c4a2a;
+  text-transform: uppercase;
+}
+
+.spark-card__title {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.spark-card__ref {
+  margin-top: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #3c4a2a;
+}
+
+.home-note {
+  margin-top: 18px;
+  background-color: var(--white);
+  border-radius: 24px;
+  padding: 16px;
+}
+
+.home-note__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.home-note__text {
+  margin-top: 4px;
+  font-size: 11px;
+  line-height: 17px;
+  color: var(--grey-text);
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "day": 1,
+    "philosopher": "Marcus Aurelius",
+    "thought": "You control your own mind, not outside events. Realise this and you find strength.",
+    "action": "Name one thing outside your control and let it go.",
+    "paraphrase": true
+  },
+  {
+    "day": 2,
+    "philosopher": "Seneca",
+    "thought": "We suffer more in imagination than in reality.",
+    "action": "Write down one worry and ask whether it is imagined or real.",
+    "paraphrase": true
+  },
+  {
+    "day": 3,
+    "philosopher": "Epictetus",
+    "thought": "It is not things that upset us, but our opinions about them.",
+    "action": "Pause for three breaths before reacting to one difficult moment.",
+    "paraphrase": true
+  },
+  {
+    "day": 4,
+    "philosopher": "Socrates",
+    "thought": "A life that is never examined is not worth living.",
+    "action": "Spend five minutes reviewing one choice you made today.",
+    "paraphrase": true
+  },
+  {
+    "day": 5,
+    "philosopher": "Confucius",
+    "thought": "It does not matter how slowly you go, as long as you do not stop.",
+    "action": "Pick one small habit and continue it, however slowly.",
+    "paraphrase": true
+  },
+  {
+    "day": 6,
+    "philosopher": "Aristotle",
+    "thought": "We become what we repeatedly do. Excellence is a habit.",
+    "action": "Repeat one good action twice today.",
+    "paraphrase": true
+  },
+  {
+    "day": 7,
+    "philosopher": "Lao Tzu",
+    "thought": "A journey of a thousand miles begins with a single step.",
+    "action": "Take the first small step on a task you have delayed.",
+    "paraphrase": true
+  }
+]
