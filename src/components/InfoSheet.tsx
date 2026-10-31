@@ -1,8 +1,11 @@
 import { useState } from '@lynx-js/react';
 
 interface InfoSheetProps {
+  userName: string;
+  userEmail: string;
   onClose: () => void;
   onOpenLink: (url: string, label: string) => void;
+  onSignOut: () => void;
   onClearHistory: () => void;
 }
 
@@ -14,8 +17,11 @@ const SOURCES = [
 ];
 
 export function InfoSheet({
+  userName,
+  userEmail,
   onClose,
   onOpenLink,
+  onSignOut,
   onClearHistory,
 }: InfoSheetProps) {
   const [askClear, setAskClear] = useState(false);
@@ -32,6 +38,16 @@ export function InfoSheet({
           Deensch1ar keeps your prayer log, routine and reading in one place.
           Your data stays on this device.
         </text>
+
+        <text className="sheet__section-title">Account</text>
+        <view className="sheet__row">
+          <text className="sheet__row-label">{userName}</text>
+          <text className="sheet__row-action">{userEmail}</text>
+        </view>
+        <view className="sheet__row" bindtap={onSignOut}>
+          <text className="sheet__row-label">Sign out</text>
+          <text className="sheet__row-action">Log out</text>
+        </view>
 
         <text className="sheet__section-title">Content sources</text>
         {SOURCES.map((source) => (

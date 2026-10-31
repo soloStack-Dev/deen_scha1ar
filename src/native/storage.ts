@@ -18,9 +18,9 @@ function getStorage(): StorageModule | undefined {
   );
 }
 
-export async function readPersistedState(): Promise<string | null> {
+export async function readStoredItem(key: string): Promise<string | null> {
   const storage = getStorage();
-  if (!storage) return memory.get(STORAGE_KEY) ?? null;
+  if (!storage) return memory.get(key) ?? null;
 
   return new Promise((resolve) => {
     let settled = false;
@@ -31,36 +31,48 @@ export async function readPersistedState(): Promise<string | null> {
     };
 
     try {
-      storage.getStorageItem(STORAGE_KEY, (value) => finish(value || null));
+      storage.getStorageItem(key, (value) => finish(value || null));
     } catch (error) {
       console.warn('Storage read failed, using in-memory fallback', error);
-      finish(memory.get(STORAGE_KEY) ?? null);
+      finish(memory.get(key) ?? null);
     }
 
-    setTimeout(() => finish(memory.get(STORAGE_KEY) ?? null), 1_000);
+    setTimeout(() => finish(memory.get(key) ?? null), 1_000);
   });
 }
 
-export async function writePersistedState(value: string): Promise<void> {
-  memory.set(STORAGE_KEY, value);
+export async function writeStoredItem(key: string, value: string): Promise<void> {
+  memory.set(key, value);
   const storage = getStorage();
   if (!storage) return;
   try {
-    storage.setStorageItem(STORAGE_KEY, value);
+    storage.setStorageItem(key, value);
   } catch (error) {
     console.warn('Storage write failed, using in-memory fallback', error);
   }
 }
 
-export async function clearPersistedState(): Promise<void> {
-  memory.delete(STORAGE_KEY);
+export async function removeStoredItem(key: string): Promise<void> {
+  memory.delete(key);
   const storage = getStorage();
   if (!storage) return;
   try {
-    storage.clearStorage();
+    storage.setStorageItem(key, '');
   } catch (error) {
     console.warn('Storage clear failed', error);
   }
+}
+
+export function readPersistedState(): Promise<string | null> {
+  return readStoredItem(STORAGE_KEY);
+}
+
+export function writePersistedState(value: string): Promise<void> {
+  return writeStoredItem(STORAGE_KEY, value);
+}
+
+export function clearPersistedState(): Promise<void> {
+  return removeStoredItem(STORAGE_KEY);
 }
 
 /** Test-only helper; keeps state isolated between Rstest cases. */

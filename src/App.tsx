@@ -3,22 +3,28 @@ import { useEffect, useRef, useState } from '@lynx-js/react';
 import './theme/tokens.css';
 import './App.css';
 
+import { AuthProvider, useAuth } from './auth/AuthProvider.js';
 import { FloatingNav } from './components/FloatingNav.js';
 import { InfoSheet } from './components/InfoSheet.js';
 import { SourceLinkSheet } from './components/SourceLinkSheet.js';
 import { Toast } from './components/Toast.js';
 import { WelcomeScreen } from './components/WelcomeScreen.js';
 import { openLink } from './native/link.js';
+import { LoginPage } from './pages/Auth/LoginPage.js';
+import { SignupPage } from './pages/Auth/SignupPage.js';
 import { Home } from './pages/Home/Home.js';
 import { ImanTracker } from './pages/ImanTracker/ImanTracker.js';
 import { Library } from './pages/Library/Library.js';
 import { AppProvider, useApp } from './state/AppProvider.js';
 import type { Page } from './state/types.js';
 
+type Route = 'welcome' | 'login' | 'signup' | 'app';
+
 function AppShell() {
   const { dispatch } = useApp();
+  const { user, hydrated, signOut } = useAuth();
+  const [route, setRoute] = useState<Route>('welcome');
   const [page, setPage] = useState<Page>('home');
-  const [entered, setEntered] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [sourceLink, setSourceLink] = useState<{ label: string; url: string } | null>(
     null,
@@ -45,10 +51,51 @@ function AppShell() {
     if (!openLink(url)) setSourceLink({ label, url });
   }
 
-  if (!entered) {
+  if (!hydrated) {
+    return (
+      <view className="app app--splash">
+        <text className="app__splash-wordmark">Deensch1ar</text>
+        <text className="app__splash-text">Preparing your space</text>
+      </view>
+    );
+  }
+
+  if (route === 'welcome') {
     return (
       <view className="app">
-        <WelcomeScreen onEnter={() => setEntered(true)} />
+        <WelcomeScreen
+          onEnter={() => setRoute(user ? 'app' : 'login')}
+        />
+      </view>
+    );
+  }
+
+  if (route === 'login') {
+    return (
+      <view className="app">
+        <LoginPage
+          onBack={() => setRoute('welcome')}
+          onSignup={() => setRoute('signup')}
+          onAuthenticated={() => {
+            setPage('home');
+            setRoute('app');
+          }}
+        />
+      </view>
+    );
+  }
+
+  if (route === 'signup') {
+    return (
+      <view className="app">
+        <SignupPage
+          onBack={() => setRoute('welcome')}
+          onLogin={() => setRoute('login')}
+          onAuthenticated={() => {
+            setPage('home');
+            setRoute('app');
+          }}
+        />
       </view>
     );
   }
@@ -59,9 +106,10 @@ function AppShell() {
         <view className="app__content">
           {page === 'home' ? (
             <Home
+              userName={user?.name ?? 'Faleel'}
               onNavigate={setPage}
               onMore={() => setShowInfo(true)}
-              onRedirect={() => setEntered(false)}
+              onRedirect={() => setRoute('welcome')}
             />
           ) : null}
           {page === 'iman' ? (
@@ -77,8 +125,15 @@ function AppShell() {
 
       {showInfo ? (
         <InfoSheet
+          userName={user?.name ?? 'Faleel'}
+          userEmail={user?.email ?? ''}
           onClose={() => setShowInfo(false)}
           onOpenLink={openSource}
+          onSignOut={() => {
+            signOut();
+            setShowInfo(false);
+            setRoute('welcome');
+          }}
           onClearHistory={() => {
             dispatch({ type: 'CLEAR_HISTORY' });
             showToast('History cleared. The active day is unchanged.');
@@ -101,8 +156,10 @@ function AppShell() {
 
 export function App() {
   return (
-    <AppProvider>
-      <AppShell />
-    </AppProvider>
+    <AuthProvider>
+      <AppProvider>
+        <AppShell />
+      </AppProvider>
+    </AuthProvider>
   );
 }

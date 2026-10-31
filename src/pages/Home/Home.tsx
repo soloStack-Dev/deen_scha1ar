@@ -23,12 +23,18 @@ import {
 import type { Page } from '../../state/types.js';
 
 interface HomeProps {
+  userName?: string;
   onNavigate: (page: Page) => void;
   onMore: () => void;
   onRedirect: () => void;
 }
 
-export function Home({ onNavigate, onMore, onRedirect }: HomeProps) {
+export function Home({
+  userName = 'Faleel',
+  onNavigate,
+  onMore,
+  onRedirect,
+}: HomeProps) {
   const { state, dispatch } = useApp();
   const now = useNow();
   const today = toDateKey(now);
@@ -47,7 +53,7 @@ export function Home({ onNavigate, onMore, onRedirect }: HomeProps) {
 
   return (
     <view className="page">
-      <Header onNotifications={onMore} onRedirect={onRedirect} />
+      <Header name={userName} onNotifications={onMore} onRedirect={onRedirect} />
 
       <ImanHeroCard
         completed={completedCount(active)}

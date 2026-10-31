@@ -7,6 +7,27 @@
   background-color: #f7f8f3;
 }
 
+.app--splash {
+  align-items: center;
+  justify-content: center;
+}
+
+.app__splash-wordmark {
+  font-family: 'Sora', 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  color: var(--ink);
+}
+
+.app__splash-text {
+  margin-top: 6px;
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  color: var(--grey-text);
+  text-transform: uppercase;
+}
+
 .app__scroll {
   flex: 1;
   width: 100%;
