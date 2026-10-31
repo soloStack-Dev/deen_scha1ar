@@ -3,6 +3,7 @@ export interface AuthUser {
   name: string;
   email: string;
   createdAt: number;
+  avatar?: string;
 }
 
 export interface StoredUser extends AuthUser {

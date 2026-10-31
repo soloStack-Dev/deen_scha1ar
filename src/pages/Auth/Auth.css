@@ -4,7 +4,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f7a8c4;
+  background-color: #eef9dd;
   overflow: hidden;
 }
 
@@ -14,7 +14,7 @@
   left: 0;
   width: 100%;
   height: 62%;
-  opacity: 0.42;
+  opacity: 0.38;
 }
 
 .auth__veil {
@@ -25,9 +25,11 @@
   bottom: 0;
   background-image: linear-gradient(
     160deg,
-    rgba(247, 168, 196, 0.9) 0%,
-    rgba(255, 201, 184, 0.8) 38%,
-    rgba(185, 160, 242, 0.92) 100%
+    rgba(198, 243, 107, 0.72) 0%,
+    rgba(160, 224, 255, 0.58) 22%,
+    rgba(255, 201, 184, 0.72) 48%,
+    rgba(247, 168, 196, 0.74) 70%,
+    rgba(185, 160, 242, 0.88) 100%
   );
 }
 
@@ -112,6 +114,42 @@
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
   overflow: hidden;
+}
+
+.auth__palette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  display: flex;
+  flex-direction: row;
+  z-index: 2;
+}
+
+.auth__swatch {
+  flex: 1;
+  height: 6px;
+}
+
+.auth__swatch--lime {
+  background-color: #c6f36b;
+}
+
+.auth__swatch--sky {
+  background-color: #a0e0ff;
+}
+
+.auth__swatch--peach {
+  background-color: #ffc9b8;
+}
+
+.auth__swatch--pink {
+  background-color: #f7a8c4;
+}
+
+.auth__swatch--violet {
+  background-color: #b9a0f2;
 }
 
 .auth__scroll {
@@ -215,14 +253,14 @@
 }
 
 .auth-check__box--on {
-  background-color: #9a7bea;
-  border-color: #9a7bea;
+  background-color: #c6f36b;
+  border-color: #a8e04a;
 }
 
 .auth-check__tick {
   font-size: 12px;
   font-weight: 800;
-  color: #ffffff;
+  color: #111411;
 }
 
 .auth-check__label {
@@ -258,7 +296,12 @@
   height: 54px;
   margin-top: 20px;
   border-radius: 999px;
-  background-image: linear-gradient(90deg, #f7a8c4 0%, #b9a0f2 100%);
+  background-image: linear-gradient(
+    90deg,
+    #c6f36b 0%,
+    #bdebe3 44%,
+    #b9a0f2 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;

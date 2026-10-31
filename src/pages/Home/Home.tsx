@@ -26,6 +26,7 @@ interface HomeProps {
   userName?: string;
   onNavigate: (page: Page) => void;
   onMore: () => void;
+  onProfile?: () => void;
   onRedirect: () => void;
 }
 
@@ -33,6 +34,7 @@ export function Home({
   userName = 'Faleel',
   onNavigate,
   onMore,
+  onProfile,
   onRedirect,
 }: HomeProps) {
   const { state, dispatch } = useApp();
@@ -53,7 +55,12 @@ export function Home({
 
   return (
     <view className="page">
-      <Header name={userName} onNotifications={onMore} onRedirect={onRedirect} />
+      <Header
+        name={userName}
+        onProfile={onProfile}
+        onNotifications={onMore}
+        onRedirect={onRedirect}
+      />
 
       <ImanHeroCard
         completed={completedCount(active)}

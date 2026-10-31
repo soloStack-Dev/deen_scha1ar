@@ -39,6 +39,13 @@ export function AuthFrame({
       </view>
 
       <view className="auth__sheet">
+        <view className="auth__palette">
+          <view className="auth__swatch auth__swatch--lime" />
+          <view className="auth__swatch auth__swatch--sky" />
+          <view className="auth__swatch auth__swatch--peach" />
+          <view className="auth__swatch auth__swatch--pink" />
+          <view className="auth__swatch auth__swatch--violet" />
+        </view>
         <scroll-view className="auth__scroll" scroll-y>
           <view className="auth__form">{children}</view>
         </scroll-view>

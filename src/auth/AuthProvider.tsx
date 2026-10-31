@@ -40,6 +40,8 @@ interface AuthContextValue {
     remember: boolean,
   ) => AuthResult;
   signOut: () => void;
+  deleteAccount: () => void;
+  updateAvatar: (avatar: string | null) => void;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -163,6 +165,24 @@ export function AuthProvider({ children }: { children?: ReactNode }) {
     commit(users, null);
   }
 
+  function deleteAccount() {
+    'background only';
+    if (!session) return;
+    const nextUsers = users.filter((item) => item.id !== session.userId);
+    commit(nextUsers, null);
+  }
+
+  function updateAvatar(avatar: string | null) {
+    'background only';
+    if (!session) return;
+    const nextUsers = users.map((item) =>
+      item.id === session.userId
+        ? { ...item, avatar: avatar ?? undefined }
+        : item,
+    );
+    commit(nextUsers, session);
+  }
+
   const user = useMemo(() => {
     if (!session) return null;
     const account = users.find((item) => item.id === session.userId);
@@ -172,11 +192,21 @@ export function AuthProvider({ children }: { children?: ReactNode }) {
       name: account.name,
       email: account.email,
       createdAt: account.createdAt,
+      avatar: account.avatar,
     };
   }, [session, users]);
 
   const value = useMemo(
-    () => ({ user, session, hydrated, signIn, signUp, signOut }),
+    () => ({
+      user,
+      session,
+      hydrated,
+      signIn,
+      signUp,
+      signOut,
+      deleteAccount,
+      updateAvatar,
+    }),
     [user, session, hydrated],
   );
 

@@ -6,6 +6,7 @@ import './App.css';
 import { AuthProvider, useAuth } from './auth/AuthProvider.js';
 import { FloatingNav } from './components/FloatingNav.js';
 import { InfoSheet } from './components/InfoSheet.js';
+import { ProfileSheet } from './components/ProfileSheet.js';
 import { SourceLinkSheet } from './components/SourceLinkSheet.js';
 import { Toast } from './components/Toast.js';
 import { WelcomeScreen } from './components/WelcomeScreen.js';
@@ -22,10 +23,11 @@ type Route = 'welcome' | 'login' | 'signup' | 'app';
 
 function AppShell() {
   const { dispatch } = useApp();
-  const { user, hydrated, signOut } = useAuth();
+  const { user, hydrated, signOut, deleteAccount, updateAvatar } = useAuth();
   const [route, setRoute] = useState<Route>('welcome');
   const [page, setPage] = useState<Page>('home');
   const [showInfo, setShowInfo] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
   const [sourceLink, setSourceLink] = useState<{ label: string; url: string } | null>(
     null,
   );
@@ -109,6 +111,10 @@ function AppShell() {
               userName={user?.name ?? 'Faleel'}
               onNavigate={setPage}
               onMore={() => setShowInfo(true)}
+              onProfile={() => {
+                setShowInfo(false);
+                setShowProfile(true);
+              }}
               onRedirect={() => setRoute('welcome')}
             />
           ) : null}
@@ -132,11 +138,34 @@ function AppShell() {
           onSignOut={() => {
             signOut();
             setShowInfo(false);
-            setRoute('welcome');
+            setPage('home');
+            setRoute('login');
           }}
           onClearHistory={() => {
             dispatch({ type: 'CLEAR_HISTORY' });
             showToast('History cleared. The active day is unchanged.');
+          }}
+        />
+      ) : null}
+
+      {showProfile ? (
+        <ProfileSheet
+          userName={user?.name ?? 'Faleel'}
+          userEmail={user?.email ?? ''}
+          avatar={user?.avatar}
+          onClose={() => setShowProfile(false)}
+          onUpdateAvatar={updateAvatar}
+          onSignOut={() => {
+            signOut();
+            setShowProfile(false);
+            setPage('home');
+            setRoute('login');
+          }}
+          onDeleteAccount={() => {
+            deleteAccount();
+            setShowProfile(false);
+            setPage('home');
+            setRoute('login');
           }}
         />
       ) : null}

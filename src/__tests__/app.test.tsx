@@ -4,6 +4,7 @@ import { fireEvent, render } from '@lynx-js/react/testing-library';
 import { beforeEach, expect, rs, test } from '@rstest/core';
 
 import { App } from '../App.js';
+import { ProfileSheet } from '../components/ProfileSheet.js';
 import { SourceLinkSheet } from '../components/SourceLinkSheet.js';
 import { __resetMemoryStorageForTests } from '../native/storage.js';
 import { Home } from '../pages/Home/Home.js';
@@ -16,6 +17,7 @@ beforeEach(() => {
 function renderHome(overrides: {
   onNavigate?: (page: string) => void;
   onMore?: () => void;
+  onProfile?: () => void;
   onRedirect?: () => void;
 } = {}) {
   return render(
@@ -24,6 +26,7 @@ function renderHome(overrides: {
         userName="Faleel"
         onNavigate={overrides.onNavigate ?? (() => {})}
         onMore={overrides.onMore ?? (() => {})}
+        onProfile={overrides.onProfile}
         onRedirect={overrides.onRedirect ?? (() => {})}
       />
     </AppProvider>,
@@ -58,7 +61,9 @@ test('login links to the signup page', async () => {
 });
 
 test('creating an account lands on the home page as that user', async () => {
-  const { findByPlaceholderText, findByText } = render(<App />);
+  const { container, findAllByText, findByPlaceholderText, findByText } = render(
+    <App />,
+  );
   fireEvent.tap(await findByText('Go to page'));
   fireEvent.tap(await findByText('Sign up'));
 
@@ -74,6 +79,13 @@ test('creating an account lands on the home page as that user', async () => {
 
   expect(await findByText('Faleel')).toBeInTheDocument();
   expect(await findByText("Today's iman")).toBeInTheDocument();
+
+  fireEvent.tap(container.querySelector('.header__avatar')!);
+  expect(await findAllByText('faleel@example.com')).not.toHaveLength(0);
+  fireEvent.tap(await findByText('Settings'));
+  fireEvent.tap(await findByText('Log out'));
+
+  expect(await findByText('Ready to continue?')).toBeInTheDocument();
 });
 
 test('home renders the iman hero and daily spark', async () => {
@@ -99,6 +111,58 @@ test('the home redirect icon returns to the welcome screen', async () => {
   fireEvent.tap(await findByText('←'));
 
   expect(onRedirect).toHaveBeenCalled();
+});
+
+test('the profile sheet shows account details and settings tabs', async () => {
+  const { findAllByText, findByText } = render(
+    <ProfileSheet
+      userName="Faleel"
+      userEmail="faleel@example.com"
+      onClose={() => {}}
+      onUpdateAvatar={() => {}}
+      onSignOut={() => {}}
+      onDeleteAccount={() => {}}
+    />,
+  );
+
+  expect(await findAllByText('Faleel')).not.toHaveLength(0);
+  expect(await findAllByText('faleel@example.com')).not.toHaveLength(0);
+
+  fireEvent.tap(await findByText('Settings'));
+
+  expect(await findByText('Log out of this device')).toBeInTheDocument();
+  expect(await findByText('Delete account')).toBeInTheDocument();
+});
+
+test('deleting an account requires the confirmation phrase', async () => {
+  const onDeleteAccount = rs.fn();
+  const { findByPlaceholderText, findByText } = render(
+    <ProfileSheet
+      userName="Faleel"
+      userEmail="faleel@example.com"
+      onClose={() => {}}
+      onUpdateAvatar={() => {}}
+      onSignOut={() => {}}
+      onDeleteAccount={onDeleteAccount}
+    />,
+  );
+
+  fireEvent.tap(await findByText('Settings'));
+  fireEvent.tap(await findByText('Delete'));
+
+  const confirmation = await findByPlaceholderText('delete my account');
+  typeInto(confirmation, 'delete');
+  fireEvent.tap(await findByText('Delete account'));
+
+  expect(onDeleteAccount).not.toHaveBeenCalled();
+  expect(
+    await findByText('Type "delete my account" exactly to continue.'),
+  ).toBeInTheDocument();
+
+  typeInto(confirmation, 'delete my account');
+  fireEvent.tap(await findByText('Delete account'));
+
+  expect(onDeleteAccount).toHaveBeenCalledTimes(1);
 });
 
 test('the source fallback shows the URL and a copy action', async () => {

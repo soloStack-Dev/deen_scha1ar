@@ -84,7 +84,8 @@ export function parseStoredAuth(raw: string | null): StoredAuth | null {
         typeof user.email === 'string' &&
         typeof user.createdAt === 'number' &&
         typeof user.salt === 'string' &&
-        typeof user.passwordHash === 'string'
+        typeof user.passwordHash === 'string' &&
+        (typeof user.avatar === 'undefined' || typeof user.avatar === 'string')
       );
     });
     const session = value.session;

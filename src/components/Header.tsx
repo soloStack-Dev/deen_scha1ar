@@ -1,20 +1,22 @@
 interface HeaderProps {
   name?: string;
+  onProfile?: () => void;
   onNotifications?: () => void;
   onRedirect?: () => void;
 }
 
 export function Header({
   name = 'Faleel',
+  onProfile,
   onNotifications,
   onRedirect,
 }: HeaderProps) {
   return (
     <view className="header">
-      <view className="header__avatar">
+      <view className="header__avatar" bindtap={onProfile}>
         <text className="header__avatar-text">{name.slice(0, 1)}</text>
       </view>
-      <view className="header__copy">
+      <view className="header__copy" bindtap={onProfile}>
         <text className="header__greeting">Assalamu Alaikum,</text>
         <text className="header__name">{name}</text>
       </view>
