@@ -25,6 +25,10 @@ npm run build
 npm run preview
 ```
 
+## Deployment
+
+`vercel.json` sets the build command to `npm run build` and the output directory to `dist`, which is where Rspeedy writes the Lynx bundle and assets. Vercel hosts those files as static artifacts; the Lynx app itself still runs in a Lynx host such as LynxExplorer.
+
 ## Tests
 
 ```bash

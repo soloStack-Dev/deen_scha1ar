@@ -110,6 +110,12 @@ This file records every runtime or compile error found while building the app, t
 - Fix: added a back-arrow control beside the Home bell wired to `entered=false`; changed the welcome wordmark and About/copy credit to Deensch1ar; removed the Library gate, adult badges, adult detail branch and `adultUnlocked` state; `filterBooks` now always excludes `adultOnly` entries and the empty sex-education chip is hidden.
 - Why this fix: the start screen is reachable from Home, the Library no longer exposes an 18+ flow, and the visible product name is consistent without breaking the existing save key.
 
+### Vercel reported `STATIC_BUILD_NO_OUT_DIR`
+- Error: Vercel built the project, then failed with `No Output Directory named "public" found after the Build completed`.
+- Cause: Vercel's static preset expects `public/`, while Rspeedy writes the Lynx bundle and assets to `dist/`.
+- Fix: added `vercel.json` with `buildCommand: "npm run build"` and `outputDirectory: "dist"`.
+- Why this fix: it points Vercel at the real Rspeedy output instead of moving or duplicating build artifacts. The output remains a Lynx bundle, so Vercel hosts it as a static artifact rather than a browser-rendered web app.
+
 ## Current verification
 - `npm run build` passes (type checker enabled); bundle is 362.3 kB plus five gallery images totalling 442 kB (804.1 kB total).
 - `npm run test` passes: 16 tests across 2 files (tracker cycle/archive/rollover/id uniqueness, streaks, week data, rotation, date keys, book filtering, copy format, schema validation, welcome-to-Home entry, Home redirect, quick-action navigation, source-link fallback).
